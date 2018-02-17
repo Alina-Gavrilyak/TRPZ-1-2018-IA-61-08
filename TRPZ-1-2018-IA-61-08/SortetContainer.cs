@@ -8,6 +8,12 @@ namespace TRPZ_1_2018_IA_61_08
 {
     public class SortetContainer
     {
+        public enum SortName
+        {
+            MergeSort,
+            QuickSort
+        }
+
         static void Swap(ref int el1, ref int el2)
         {
             int tmp = el2;
@@ -15,17 +21,18 @@ namespace TRPZ_1_2018_IA_61_08
             el1 = tmp;
         }
 
-        public enum SortName
-        {
-            MergeSort
-        }
-
-        static public void Sort(ref int[] arr, SortName sortName = SortName.MergeSort)
+        static public void Sort(ref int[] array, SortName sortName = SortName.MergeSort)
         {
             switch (sortName)
             {
                 case SortName.MergeSort:
-                    MergeSort(ref arr);
+                    MergeSort(ref array);
+                    break;
+                case SortName.QuickSort:
+                    QuickSort(ref array);
+                    break;
+                default:
+                    Array.Sort(array);
                     break;
             }
         }
@@ -47,7 +54,6 @@ namespace TRPZ_1_2018_IA_61_08
             Sort(ref right);
             Merge(ref items, left, right);
         }
-
         static private void Merge(ref int[] items, int[] left, int[] right)
         {
             int leftIndex = 0;
@@ -76,6 +82,35 @@ namespace TRPZ_1_2018_IA_61_08
                 targetIndex++;
                 remaining--;
             }
+        }
+
+        static public void QuickSort(ref int[] array)
+        {
+            QuickSort(ref array, 0, array.Length - 1);
+        }
+        static void QuickSort(ref int[] array, int start, int end)
+        {
+            if (start >= end)
+            {
+                return;
+            }
+            int pivot = Partition(ref array, start, end);
+            QuickSort(ref array, start, pivot - 1);
+            QuickSort(ref array, pivot + 1, end);
+        }
+        static int Partition(ref int[] array, int start, int end)
+        {
+            int marker = start;
+            for (int i = start; i <= end; i++)
+            {
+                if (array[i] < array[end])
+                {
+                    Swap(ref array[marker], ref array[i]);
+                    marker += 1;
+                }
+            }
+            Swap(ref array[marker], ref array[end]);
+            return marker;
         }
     }
 }
