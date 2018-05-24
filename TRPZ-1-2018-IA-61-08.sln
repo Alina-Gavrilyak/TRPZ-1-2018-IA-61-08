@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPZ-1-2018-IA-61-08", "TRPZ-1-2018-IA-61-08\TRPZ-1-2018-IA-61-08.csproj", "{00DFC139-9188-4706-9766-EC596197379F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRPZ-1-2018-IA-61-08", "TRPZ-1-2018-IA-61-08.csproj", "{00DFC139-9188-4706-9766-EC596197379F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DAE1A438-9A97-4619-A8F3-A4FB54839D07}
+		SolutionGuid = {D468691C-307B-4EAB-928B-B4061B07A792}
 	EndGlobalSection
 EndGlobal
